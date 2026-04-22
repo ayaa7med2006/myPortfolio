@@ -1271,37 +1271,42 @@ nav ul li a.active::after {
     border: 1px solid rgba(14, 165, 233, 0.2);
     font-weight: 500;
 }
-@media (max-width: 968px) {
-    /* تحويل الـ Hero ليكون عمودي */
-    .hero-content {
-        flex-direction: column-reverse; /* الصورة فوق والكلام تحت أو العكس */
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text h1 {
-        font-size: 2.2rem; /* تصغير الخط عشان مياخدش مساحة */
-    }
-
-    .hero-subtext {
-        margin: 15px auto; /* توسيط النص */
+@media (max-width: 768px) {
+    /* 1. حل مشكلة تغطية الصورة */
+    header {
+        padding-top: 100px !important; /* بيدي مساحة تحت الناف بار عشان صورتك تظهر */
+        min-height: auto;
     }
 
     .image-wrapper {
-        width: 280px; /* تصغير حجم الصورة */
-        height: 280px;
+        width: 250px; /* تصغير الصورة شوية للموبايل */
+        height: 250px;
+        margin: 0 auto;
     }
 
-    /* تعديل الـ Nav عشان الموبايل */
+    /* 2. حل مشكلة الناف بار المختفي */
     nav {
-        padding: 15px 5%;
+        padding: 10px 5%;
+        flex-direction: column; /* بيخلي اللوجو فوق واللينكات تحت */
+        align-items: center;
     }
 
     nav ul {
+        display: flex; /* هنرجعه يظهر بس بتنسيق أصغر */
+        flex-wrap: wrap; /* لو الكلمات كتير تنزل سطر جديد بدل ما تخرج بره الشاشة */
+        justify-content: center;
         gap: 10px;
+        margin-top: 10px;
     }
-    
+
     nav ul li a {
-        font-size: 0.85rem;
+        font-size: 0.75rem; /* تصغير الخط عشان الكلمات تبان */
+        padding: 5px;
+    }
+
+    /* 3. تعديل الـ Hero text */
+    .hero-text h1 {
+        font-size: 1.8rem;
+        text-align: center;
     }
 }
