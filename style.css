@@ -1272,41 +1272,55 @@ nav ul li a.active::after {
     font-weight: 500;
 }
 @media (max-width: 768px) {
-    /* 1. حل مشكلة تغطية الصورة */
-    header {
-        padding-top: 100px !important; /* بيدي مساحة تحت الناف بار عشان صورتك تظهر */
-        min-height: auto;
-    }
-
-    .image-wrapper {
-        width: 250px; /* تصغير الصورة شوية للموبايل */
-        height: 250px;
-        margin: 0 auto;
-    }
-
-    /* 2. حل مشكلة الناف بار المختفي */
+    /* 1. حل مشكلة الناف بار والزحمة اللي فوق */
     nav {
-        padding: 10px 5%;
-        flex-direction: column; /* بيخلي اللوجو فوق واللينكات تحت */
-        align-items: center;
+        padding: 10px;
     }
-
     nav ul {
-        display: flex; /* هنرجعه يظهر بس بتنسيق أصغر */
-        flex-wrap: wrap; /* لو الكلمات كتير تنزل سطر جديد بدل ما تخرج بره الشاشة */
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 8px;
     }
-
     nav ul li a {
-        font-size: 0.75rem; /* تصغير الخط عشان الكلمات تبان */
-        padding: 5px;
+        font-size: 0.8rem;
     }
 
-    /* 3. تعديل الـ Hero text */
+    /* 2. ترتيب الـ Home: الصورة فوق والكلام تحتها */
+    header {
+        padding-top: 120px !important; /* مساحة كافية عشان الناف بار ميواريش الكلام */
+        flex-direction: column; /* بيخلي العناصر فوق بعض */
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column; /* الصورة فوق الأول */
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* 3. منع تكسير الكلام */
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .hero-text h1 {
         font-size: 1.8rem;
-        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        white-space: normal; /* بيسمح للجملة تاخد راحتها */
+        padding: 0 10px;
+    }
+
+    /* 4. تنسيق الصورة عشان متكونش ضخمة */
+    .image-wrapper {
+        width: 200px;
+        height: 200px;
+        order: -1; /* بيضمن إن الصورة تطلع فوق الكلام */
     }
 }
