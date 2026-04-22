@@ -1271,3 +1271,37 @@ nav ul li a.active::after {
     border: 1px solid rgba(14, 165, 233, 0.2);
     font-weight: 500;
 }
+@media (max-width: 968px) {
+    /* تحويل الـ Hero ليكون عمودي */
+    .hero-content {
+        flex-direction: column-reverse; /* الصورة فوق والكلام تحت أو العكس */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* تصغير الخط عشان مياخدش مساحة */
+    }
+
+    .hero-subtext {
+        margin: 15px auto; /* توسيط النص */
+    }
+
+    .image-wrapper {
+        width: 280px; /* تصغير حجم الصورة */
+        height: 280px;
+    }
+
+    /* تعديل الـ Nav عشان الموبايل */
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+    
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+}
